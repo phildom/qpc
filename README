@@ -1,0 +1,6 @@
+Quoted-printable converter using Perl.
+
+A simple perl script using perl's MIME module to convert
+Quoted-printables.
+-d decodes
+-e encodes

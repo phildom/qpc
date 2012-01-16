@@ -1,0 +1,22 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+
+use MIME::QuotedPrint;
+
+if (@ARGV < 1) {
+	print STDERR "usage: qpc [-de]\n";
+	exit(1);
+}
+
+my $opt = shift @ARGV;
+
+if ($opt eq "-d") {
+	print decode_qp($_) while(<>);
+} elsif ($opt eq "-e") {
+	print encode_qp($_) while (<>);
+} else {
+	print STDERR "usage: qpc [-de]\n";
+	exit(1);
+}
